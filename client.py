@@ -5,7 +5,7 @@ import random
 from time import sleep
 
 rqs_headers={'Content-Type': 'application/json'}
-requrl ='http://127.0.0.1:8000/show/temperature_api' #服务器的IP地址
+# requrl ='http://127.0.0.1:8000/show/temperature_api' #服务器的IP地址
 
 
 class ComplexEncoder(json.JSONEncoder):#这个是用来把datetime的时间格式化
@@ -36,11 +36,21 @@ while(1):
     sleep(2)
     print(flag)
     flag += 1
-    temperature = random.randint(0,20)
 
+    # # 模拟温度数据
+    # requrl ='http://127.0.0.1:8000/show/temperature_api' #服务器的IP地址
+    # temperature = random.randint(0,20)
+    # new_data = {
+    #     "captime": datetime.datetime.now(),
+    #     "captemperature": temperature
+    # }
+
+    # 模拟二氧化碳数据
+    requrl ='http://127.0.0.1:8000/show/co2_api' #服务器的IP地址
+    co2 = random.randint(0,20)
     new_data = {
         "captime": datetime.datetime.now(),
-        "captemperature": temperature
+        "capco2": co2
     }
 
     test_data = json.dumps(new_data, cls=ComplexEncoder)
