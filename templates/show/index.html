@@ -1,13 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+{% load static %}
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<title>The Website</title>
+	<link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-    <p>Hello, you are in the show index !</p>
-    <a href="http://127.0.0.1:8000/show/display">click</a>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<main>
+		<section>
+			<h1>Welcome to Uniform Monitoring Platform</h1>
+			<p>This website is the Uniform Monitoring Platform of our College Students' Innovative Entrepreneurial Training Plan Program.</p>
+            <p>You can observe the values of the environment and the pictures captured by the robot in real time through this website.</p>
+            <p>Enter the data interface through the buttons below.</p>
+            <div style="margin-top: 40px;text-align: center;">
+                <a href="#" class="btn">Imgs</a>
+                <a href="http://127.0.0.1:8000/show/display" class="btn">data</a>
+            </div>
+		</section>
+	</main>
+	
+	<footer style="text-align: center;">
+		<p>&copy; 2023 Website of Uniform Monitoring Platform. All rights reserved.</p>
+	</footer>
 </body>
 </html>
