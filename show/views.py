@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
-from show.models import Temperature, co2
-from show.serializers import TempSerializer, Co2Serializer
+from show.models import Temperature, co2, humidity
+from show.serializers import TempSerializer, Co2Serializer, HumiditySerializer
 from rest_framework import generics
 
 # Create your views here.
@@ -41,6 +41,22 @@ def get_co2(request):
 	return JsonResponse({"s1":res})
 
 
+# 湿度
+class humidity_api(generics.ListCreateAPIView):
+	queryset = humidity.objects.all()
+	serializer_class = HumiditySerializer
+
+def get_humidity(request):
+	data = humidity.objects.all()
+	res = []
+	if data:
+		for i in data:
+			tx = i.captime
+			ty = i.caphumidity
+			res.append({"time":tx.isoformat(), "humidity":float(ty) })
+	return JsonResponse({"s1":res})
+
+
 def display(request):
 	# 温度
 	data1 = Temperature.objects.all()
@@ -60,5 +76,14 @@ def display(request):
 			ny = j.capco2
 			res2.append([nx.isoformat(), float(ny)])
 	res2 = res2[::-1][0:15][::-1]
+	# 湿度
+	data3 = humidity.objects.all()
+	res3 = []
+	if data3:
+		for k in data3:
+			mx = k.captime
+			my = k.caphumidity
+			res3.append([mx.isoformat(), float(my)])
+	res3 = res3[::-1][0:15][::-1]
 
 	return render(request, 'show/temperature_index.html',locals()) 

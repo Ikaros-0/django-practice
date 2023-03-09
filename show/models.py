@@ -17,3 +17,11 @@ class co2(models.Model):
 
     def __str__(self) -> str:
         return self.capco2
+
+# 湿度数据模型
+class humidity(models.Model):
+    captime = models.DateTimeField(auto_now_add=False)
+    caphumidity = models.CharField(max_length=10)
+
+    def __str__(self) -> str:
+        return self.caphumidity

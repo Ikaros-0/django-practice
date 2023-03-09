@@ -1,19 +1,31 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+
+<!-- 温度 -->
 <div class="row">
     <div class="col-md-12">
         <div id="Temperature"></div>
     </div>
 </div>
-<div>
-  <p>Split line</p>
-</div>
+<hr>
+
+<!-- 二氧化碳 -->
 <div class="row">
   <div class="col-md-12">
       <div id="CO2"></div>
   </div>
 </div>
+<hr>
+
+<!-- 湿度 -->
+<div class="row">
+  <div class="col-md-12">
+      <div id="Humidity"></div>
+  </div>
+</div>
+<hr>
+
 <script type="text/javascript">
     Highcharts.setOptions({
       global: {useUTC: false }
@@ -111,6 +123,54 @@
       series: [{
                 name: 'CO2',
                 data: {{res2|safe}},
+            }],
+    });
+
+    Highcharts.chart("Humidity", {
+      chart: {
+        renderTo:'Humidity',
+        type: 'spline',
+        events: {
+        // current problem is the x and y are not same
+          load: function () {
+            var series = this.series[0];
+            setInterval(function (){
+              $.ajax({
+                  url:'/show/get_humidity',
+                  dataType:'json',
+                  success: function(data) {
+                      var y = data.s1[data.s1.length-1];
+                      series.addPoint([y.time,y.humidity], true, true); 
+                  },
+              });
+            },1000*5);
+          },
+        },
+      },
+      lang:{
+        viewFullscreen:"全屏",
+        printChart:"打印图表",
+        downloadJPEG:"下载JPEG图片",
+        downloadPDF:"下载PDF文件",
+        downloadPNG:"下载PNG文件",
+        downloadSVG:"下载SVG文件",
+      },
+      title: {text: 'Humidity'},
+      xAxis: {type: "category",min: 5, max: 15},
+      yAxis: {title: {text: 'Humidity'}},
+      rangeSelector: {
+            allButtonsEnabled: true,
+            selected: 2
+        },
+      navigator:{
+            enabled:true
+        },
+      scrollbar: {
+        enabled: true
+      },
+      series: [{
+                name: 'Humidity',
+                data: {{res3|safe}},
             }],
     });
 </script>

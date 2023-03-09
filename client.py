@@ -37,24 +37,34 @@ while(1):
     print(flag)
     flag += 1
 
-    # # 模拟温度数据
-    # requrl ='http://127.0.0.1:8000/show/temperature_api' #服务器的IP地址
-    # temperature = random.randint(0,20)
-    # new_data = {
-    #     "captime": datetime.datetime.now(),
-    #     "captemperature": temperature
-    # }
+    # 模拟温度数据
+    requrl_1 ='http://127.0.0.1:8000/show/temperature_api' #服务器的IP地址
+    temperature = random.randint(0,20)
+    new_data_1 = {
+        "captime": datetime.datetime.now(),
+        "captemperature": temperature
+    }
 
     # 模拟二氧化碳数据
-    requrl ='http://127.0.0.1:8000/show/co2_api' #服务器的IP地址
+    requrl_2 ='http://127.0.0.1:8000/show/co2_api' #服务器的IP地址
     co2 = random.randint(0,20)
-    new_data = {
+    new_data_2 = {
         "captime": datetime.datetime.now(),
         "capco2": co2
     }
 
-    test_data = json.dumps(new_data, cls=ComplexEncoder)
-    print(type(new_data))
-    print(test_data)
+    # 模拟湿度数据
+    requrl_3 = 'http://127.0.0.1:8000/show/humidity_api' #服务器的IP地址
+    humidity = random.randint(0,20)
+    new_data_3 = {
+        "captime": datetime.datetime.now(),
+        "caphumidity": humidity
+    }
 
-    response = requests.post(url=requrl, headers=rqs_headers, data=test_data)
+    test_data_1 = json.dumps(new_data_1, cls=ComplexEncoder)
+    test_data_2 = json.dumps(new_data_2, cls=ComplexEncoder)
+    test_data_3 = json.dumps(new_data_3, cls=ComplexEncoder)
+
+    response = requests.post(url=requrl_1, headers=rqs_headers, data=test_data_1)
+    response = requests.post(url=requrl_2, headers=rqs_headers, data=test_data_2)
+    response = requests.post(url=requrl_3, headers=rqs_headers, data=test_data_3)
