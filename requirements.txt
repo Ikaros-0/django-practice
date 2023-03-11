@@ -1,0 +1,43 @@
+asgiref @ file:///C:/Users/BUILDE~1/AppData/Local/Temp/abs_cchykh5sgr/croots/recipe/asgiref_1661287542702/work
+attrs==22.2.0
+autobahn==23.1.2
+Automat==22.10.0
+backports.zoneinfo @ file:///C:/Users/BUILDE~1/AppData/Local/Temp/abs_29zz4uumbw/croots/recipe/backports.zoneinfo_1661287541232/work
+brotlipy==0.7.0
+certifi @ file:///C:/b/abs_85o_6fm0se/croot/certifi_1671487778835/work/certifi
+cffi @ file:///C:/b/abs_49n3v2hyhr/croot/cffi_1670423218144/work
+channels==4.0.0
+charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654/work
+constantly==15.1.0
+cryptography==39.0.2
+daphne==4.0.0
+Django @ file:///C:/Users/BUILDE~1/AppData/Local/Temp/abs_eeor5o9jj8/croots/recipe/django_1661292534510/work
+djangorestframework==3.14.0
+gevent==22.10.2
+greenlet==2.0.2
+hyperlink==21.0.0
+idna @ file:///C:/b/abs_bdhbebrioa/croot/idna_1666125572046/work
+incremental==22.10.0
+Pillow==9.4.0
+pyasn1==0.4.8
+pyasn1-modules==0.2.8
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pyOpenSSL @ file:///C:/b/abs_552w85x1jz/croot/pyopenssl_1677607703691/work
+PySocks @ file:///C:/ci/pysocks_1605287845585/work
+pytz==2022.7.1
+requests @ file:///C:/ci/requests_1657717096906/work
+requests-toolbelt==0.10.1
+service-identity==21.1.0
+six==1.16.0
+sqlparse @ file:///C:/b/abs_83jn6owfpc/croot/sqlparse_1668793499314/work
+Twisted==22.10.0
+twisted-iocpsupport==1.0.2
+txaio==23.1.1
+typing_extensions==4.5.0
+tzdata @ file:///tmp/build/80754af9/python-tzdata_1611693927741/work
+urllib3 @ file:///C:/b/abs_9bcwxczrvm/croot/urllib3_1673575521331/work
+websockets @ file:///C:/b/abs_aenn_idbde/croot/websockets_1677830587710/work
+win-inet-pton @ file:///C:/ci/win_inet_pton_1605306167264/work
+wincertstore==0.2
+zope.event==4.6
+zope.interface==5.5.2
