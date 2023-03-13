@@ -23,3 +23,6 @@ for file in dirs:
     headers['Content-Type'] = multipart_encoder.content_type # 请求格式
     response = requests.post(url=url, data= multipart_encoder , headers = headers)
     sleep(5)
+    # 已上传则删除，方便测试
+    os.remove(path)
+    print('already remove'+path)
