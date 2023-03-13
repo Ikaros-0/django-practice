@@ -32,7 +32,7 @@
 <br><br><br>
 ### 二、使用说明
 (1) 首先通过requirements.txt安装所有依赖。<br>
-(2) 在终端输入 py manage.py runserver 命令启动服务器。<br>
+(2) 在终端输入 py manage.py runserver 命令启动服务器。(请先cd进入manage.py文件同级目录下再执行)<br>
 ![image text](./md_imgs/1.png)
 (3) 点击执行后出现的 127.0.0.1：8000 进入网站<br>
 ![image text](./md_imgs/2.png)
@@ -55,3 +55,4 @@ PS：可通过后台管理界面删除数据，但最好不要通过该界面上
 
 ### 存在其他问题请联系开发者
 ### 网站还需改进......
+### 请不要在 master 该分支进行推送更改！！！
