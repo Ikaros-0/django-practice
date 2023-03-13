@@ -24,7 +24,7 @@ while(1):
 
     # 模拟温度数据
     requrl_1 ='http://127.0.0.1:8000/show/temperature_api' #服务器的IP地址
-    temperature = random.randint(0,20)
+    temperature = round(random.uniform(18,20))
     new_data_1 = {
         "captime": datetime.datetime.now(),
         "captemperature": temperature
@@ -32,7 +32,7 @@ while(1):
 
     # 模拟二氧化碳数据
     requrl_2 ='http://127.0.0.1:8000/show/co2_api' #服务器的IP地址
-    co2 = random.randint(0,20)
+    co2 = round(random.uniform(75,85))
     new_data_2 = {
         "captime": datetime.datetime.now(),
         "capco2": co2
@@ -40,7 +40,7 @@ while(1):
 
     # 模拟湿度数据
     requrl_3 = 'http://127.0.0.1:8000/show/humidity_api' #服务器的IP地址
-    humidity = random.randint(0,20)
+    humidity = round(random.uniform(350,400))
     new_data_3 = {
         "captime": datetime.datetime.now(),
         "caphumidity": humidity
